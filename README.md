@@ -1,2 +1,3 @@
 # maelstrom
-Yet another RSS feed syndicator
+
+Yet another RSS feed syndicator.
