@@ -4,13 +4,14 @@
     <title>Maelstrom icon</title>
     <defs>
         <path id="spiral" fill="none" stroke="#80c0ff" stroke-linecap="round"
-              stroke-width="0.0625" d="M 0,-0.46875 c 0.125,0 0.25,0.25 0.1,0.45"/>
-        <radialGradient id="gradient" r="0.5">
-            <stop offset="0" stop-color="rgba(0,0,0,1)"/>
-            <stop offset="0.25" stop-color="rgba(0,0,0,1)"/>
-            <stop offset="0.625" stop-color="rgba(0,0,0,0.5)"/>
-            <stop offset="0.875" stop-color="rgba(0,0,0,0)"/>
-            <stop offset="1" stop-color="rgba(0,0,0,0)"/>
+              stroke-width="0.0625" d="M 0,-0.46875
+              c 0.125,0 0.25,0.25 0.1,0.45"/>
+        <radialGradient id="gradient">
+            <stop offset="0" stop-color="#000000" stop-opacity="1"/>
+            <stop offset="0.25" stop-color="#000000" stop-opacity="1"/>
+            <stop offset="0.625" stop-color="#000000" stop-opacity="0.5"/>
+            <stop offset="0.875" stop-color="#000000" stop-opacity="0"/>
+            <stop offset="1" stop-color="#000000" stop-opacity="0"/>
         </radialGradient>
     </defs>
     <rect x="-0.5" y="-0.5" width="1" height="1" fill="#000080"/>
