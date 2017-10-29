@@ -7,6 +7,7 @@ const { stringResponder } = require('./lib/static.js');
 const r = new Router();
 
 r.get('/', stringResponder(200, 'Hello World!'));
+r.getStatic(/\/static\/(.*)/, 'static/$1');
 
 // Catch-all routes
 r.route('GET', null, stringResponder(404, '404 Not Found'));
