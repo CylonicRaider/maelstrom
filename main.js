@@ -6,7 +6,11 @@ const { stringResponder } = require('./lib/static.js');
 
 const r = new Router();
 
+// Landing page
 r.get('/', stringResponder(200, 'Hello World!'));
+
+// Statics
+r.alias('/favicon.ico', '/static/icon.ico');
 r.getStatic(/\/static\/(.*)/, '$1', 'static');
 
 // Catch-all routes
