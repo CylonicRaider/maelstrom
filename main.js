@@ -2,7 +2,7 @@
 const http = require('http');
 
 const { Router } = require('./lib/router.js');
-const { stringResponder } = require('./lib/static.js');
+const { stringResponder } = require('./lib/filecache.js');
 
 const r = new Router();
 
