@@ -1,4 +1,6 @@
 
+/* Maelstrom main file */
+
 const http = require('http');
 
 const httplog = require('./lib/httplog.js');
