@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "Yet another RSS feed syndicator",
   "main": "main.js",
+  "dependencies": {
+    "xml2js": "^0.4.19"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CylonicRaider/maelstrom.git"
