@@ -1,0 +1,16 @@
+{
+  "name": "maelstromrss",
+  "version": "0.1.0",
+  "description": "Yet another RSS feed syndicator",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CylonicRaider/maelstrom.git"
+  },
+  "author": "CylonicRaider",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CylonicRaider/maelstrom/issues"
+  },
+  "homepage": "https://github.com/CylonicRaider/maelstrom"
+}
