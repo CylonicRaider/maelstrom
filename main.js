@@ -4,7 +4,7 @@
 const http = require('http');
 
 const httplog = require('./lib/httplog.js');
-const { Router } = require('./lib/router.js');
+const Router = require('./lib/router.js');
 
 const r = new Router();
 
