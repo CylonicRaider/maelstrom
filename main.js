@@ -14,7 +14,7 @@ const DEFAULT_PORT = 8080;
 /* Parse command-line arguments */
 function parseArgs() {
   const values = minimist(process.argv.slice(2));
-  const ret = {port: DEFAULT_PORT};
+  const ret = {port: DEFAULT_PORT, host: undefined};
 
   try {
     // Currently not accepting positional arguments
@@ -23,9 +23,14 @@ function parseArgs() {
 
     // Help
     if (values.help) {
-      console.info('USAGE: %s %s [--help] [--port port]',
+      console.info('USAGE: %s %s [--help] [--host host] [--port port]',
         path.basename(process.argv[0]), path.basename(process.argv[1]));
       process.exit(0);
+    }
+
+    // HTTP host
+    if (values.host) {
+      ret.host = values.host;
     }
 
     // HTTP port
@@ -62,4 +67,4 @@ function makeServer() {
 }
 
 const args = parseArgs();
-makeServer().listen(args.port);
+makeServer().listen(args.port, args.host);
