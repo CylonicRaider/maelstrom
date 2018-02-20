@@ -6,15 +6,12 @@ const path = require('path');
 
 const minimist = require('minimist');
 
-const httplog = require('./lib/httplog.js');
-const Router = require('./lib/router.js');
-
-const DEFAULT_PORT = 8080;
+const { Maelstrom } = require('./lib/controller.js');
 
 /* Parse command-line arguments */
 function parseArgs() {
   const values = minimist(process.argv.slice(2));
-  const ret = {port: DEFAULT_PORT, host: undefined};
+  const ret = {port: undefined, host: undefined};
 
   try {
     // Currently not accepting positional arguments
@@ -48,23 +45,9 @@ function parseArgs() {
   return ret;
 }
 
-/* Create and configure a HTTP server */
-function makeServer() {
-  const r = new Router();
-
-  // Landing page
-  r.getString('/', 200, 'Hello World!');
-
-  // Statics
-  r.alias('/favicon.ico', '/static/icon.ico');
-  r.getStatic(/\/static\/(.*)/, '$1', 'static');
-
-  // Catch-all routes
-  r.routeString('GET', null, 404, '404 Not Found');
-  r.routeString(null, null, 405, '405 Method Not Allowed');
-
-  return http.createServer(httplog.wrap(r.makeCallback()));
-}
-
 const args = parseArgs();
-makeServer().listen(args.port, args.host);
+const main = new Maelstrom();
+main.updateServerConfig(args);
+main.makeRouter().getString('/', 200, 'Hello World!');
+main.makeServer();
+main.listen();
